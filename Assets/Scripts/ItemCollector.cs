@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class ItemCollector : MonoBehaviour
 {
     [SerializeField] private Text scoreText;
-    private int bonbonky = 0;
+    public static int globalBonbonky = 0;
+    public static int bonbonky = 0;
     // Start is called before the first frame update
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -22,6 +23,12 @@ public class ItemCollector : MonoBehaviour
             bonbonky += 5;
             Debug.Log("bonbonky " + bonbonky);
         }
-        scoreText.text = "Score: " + bonbonky;
+        scoreText.text = "Skore: " + bonbonky;
     }
+
+    private void Start()
+    {
+        scoreText.text = "Skore: " + globalBonbonky;
+    }
+
 }

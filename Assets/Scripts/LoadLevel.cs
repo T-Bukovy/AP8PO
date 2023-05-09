@@ -15,6 +15,7 @@ public class LoadLevel : MonoBehaviour
     {
         if (collision.gameObject.name == "Player")
         {
+            ItemCollector.globalBonbonky += ItemCollector.bonbonky;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }

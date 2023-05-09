@@ -11,12 +11,14 @@ public class mrSpiky : MonoBehaviour
         if (collision.gameObject.CompareTag("Jezecek"))
         {
             Debug.Log("You just touched my spiky spike ... now, please ... remove yourself :) ");
+            ItemCollector.bonbonky = ItemCollector.globalBonbonky;
             OhNo();
 
         }
 
         if (collision.gameObject.CompareTag("Konec"))
         {
+            ItemCollector.bonbonky = ItemCollector.globalBonbonky;
             OhNo();
         }
     }
