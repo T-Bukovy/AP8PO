@@ -8,15 +8,22 @@ public class LoadLevel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        //Zde půjde zvuk portalu
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.name == "Player")
         {
-            ItemCollector.globalBonbonky += ItemCollector.bonbonky;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            //Zde zavolám zvuk portalu
+            CompleteLevel();
         }
+    }
+
+
+    private void CompleteLevel()
+    {
+        ItemCollector.globalBonbonky = ItemCollector.bonbonky;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

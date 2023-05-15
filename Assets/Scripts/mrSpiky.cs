@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,6 +14,7 @@ public class mrSpiky : MonoBehaviour
             
             //ItemCollector.bonbonky = ItemCollector.globalBonbonky;
             OhNo();
+            return;
 
         }
 
@@ -20,13 +22,20 @@ public class mrSpiky : MonoBehaviour
         {
             //ItemCollector.bonbonky = ItemCollector.globalBonbonky;
             OhNo();
+            return;
         }
     }
 
     private void OhNo()
     {
         ItemCollector.bonbonky = ItemCollector.globalBonbonky;
-        int scene = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(scene, LoadSceneMode.Single);
+        //int scene = SceneManager.GetActiveScene().buildIndex;
+        RestartLevel();
+        
+    }
+
+    private void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
