@@ -16,14 +16,15 @@ public class ItemCollector : MonoBehaviour
             Destroy(collision.gameObject);
             bonbonky++;
             Debug.Log("bonbonky " + bonbonky);
+            scoreText.text = "Skore: " + bonbonky;
         }
         if (collision.gameObject.CompareTag("Zmrzlinka"))
         {
             Destroy(collision.gameObject);
             bonbonky += 5;
             Debug.Log("bonbonky " + bonbonky);
+            scoreText.text = "Skore: " + bonbonky;
         }
-        scoreText.text = "Skore: " + bonbonky;
     }
 
     private void Start()
