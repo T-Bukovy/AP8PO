@@ -43,6 +43,7 @@ public class PauseMenu : MonoBehaviour
     public void QuitGame()
     {
         Debug.Log("Ukoncuji se ");
+        Application.Quit();
     }
     public void LoadMainMenu()
     {
