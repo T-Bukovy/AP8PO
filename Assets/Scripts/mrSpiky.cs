@@ -5,13 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class mrSpiky : MonoBehaviour
 {
-    //[SerializeField] private AudioSource popEffect;
+    //[SerializeField] private AudioSource smrt;
+    
     // Start is called before the first frame update
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Jezecek"))
         {
+            //smrt.Play();
             OhNo();
 
         }
@@ -24,7 +25,6 @@ public class mrSpiky : MonoBehaviour
 
     private void OhNo()
     {
-        //popEffect.Play();
         ItemCollector.bonbonky = ItemCollector.globalBonbonky;
         //int scene = SceneManager.GetActiveScene().buildIndex;
         RestartLevel();
@@ -33,7 +33,7 @@ public class mrSpiky : MonoBehaviour
 
     private void RestartLevel()
     {
-        //popEffect.Stop();
+        //smrt.Stop();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

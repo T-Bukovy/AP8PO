@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LoadLevel : MonoBehaviour
 {
+    //[SerializeField] private AudioSource teleport;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +16,7 @@ public class LoadLevel : MonoBehaviour
     {
         if (collision.gameObject.name == "Player")
         {
+            //teleport.Play();
             //Zde zavolám zvuk portalu
             CompleteLevel();
         }
