@@ -10,6 +10,8 @@ public class endGame : MonoBehaviour
     [SerializeField] private Text vysledneScore;
     private void Start()
     {
+        // mělo by končit
+        BGAudio.Instance.gameObject.GetComponent<AudioSource>().Pause();
         if (ItemCollector.globalBonbonky == 0)
         {
             vysledneScore.text = "Skore: 0";
